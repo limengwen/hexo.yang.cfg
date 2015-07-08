@@ -30,11 +30,11 @@ skip_render:
 
 # Header
 menu:
-  宸居首页: /about
-  仗剑江湖: /about
-  落霞回梦: /about
-  一骑凌霄: /about
+  宸居首页: /
+  Categories:
   关于我: /about
+
+groupByYear: true
 
 # Content
 fancybox: true
@@ -60,11 +60,14 @@ widgets:
 - tag
 - tagcloud
 - links
+categories:
+- 御剑江湖
+  - JavaScript
+  - CSS
+- 水岸风堤
+  - 落霞回梦
+  - 一骑凌霄
 
-category:
-  仗剑江湖:
-  落霞回梦: 
-  一骑凌霄: 
 
 # Links
 links:
