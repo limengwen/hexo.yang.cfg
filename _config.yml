@@ -4,7 +4,7 @@
 
 # Site
 title: 紫微宸居
-subtitle: 商伯阳 's Blog
+subtitle: 商伯阳 's Blog -- What I do that defines me.
 description: 商伯阳，紫微宸居，技术艺术，思想文学，个人博客
 author: 商伯阳
 language: zh-CN
@@ -61,13 +61,22 @@ widgets:
 - tagcloud
 - links
 categories:
-- 御剑江湖
+ 御剑江湖:
   - JavaScript
   - CSS
-- 水岸风堤
+ 凤鸣榣山:
+  - 小说
+  - 漫画
+  - 游戏
+  - Gundam
+  - 手办
+  - 周边
+ 剑魄琴心:
+  - ACG
+  - NewAge
+ 水岸风堤:
   - 落霞回梦
   - 一骑凌霄
-
 
 # Links
 links:
