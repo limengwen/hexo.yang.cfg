@@ -1,6 +1,7 @@
 <% if (config.disqus_shortname){ %>
 <script>
   var disqus_shortname = '<%= config.disqus_shortname %>';
+  console.log(disqus_shortname);
   <% if (page.permalink){ %>
   var disqus_url = '<%= page.permalink %>';
   <% } %>
@@ -31,3 +32,6 @@
 
 <%- js('js/html-patch') %>
 <%- js('js/script') %>
+
+
+

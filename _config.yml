@@ -11,6 +11,9 @@ language: zh-CN
 email: yang8701@gmail.com #联系邮箱
 timezone:
 
+# DuoShuo
+duoshuo_shortname: shangboyang
+
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://www.shangboyang.com
