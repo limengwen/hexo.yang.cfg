@@ -1,0 +1,5 @@
+# hexo.yang.cfg
+
+'''
+ddd
+'''
