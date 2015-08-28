@@ -1,5 +1,4 @@
 # hexo.yang.cfg
 
-'''
-ddd
-'''
+###My Hexo-Blog config.
+###Only for backups. @^_^@
