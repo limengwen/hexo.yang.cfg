@@ -14,7 +14,9 @@ var slice = [].slice;
 var Core = function () {
 
 };
+```
 
+``` bash
 Core.Class = function () {
 if (arguments.length == 0 || arguments.length > 2) throw '参数错误';
 
