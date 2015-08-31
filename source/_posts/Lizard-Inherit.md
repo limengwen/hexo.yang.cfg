@@ -154,12 +154,15 @@ if (parent) {
 
 3.［实例扩展与子类重写］
 ```
+// 作为父类原型对象 可为空
 var ancestor = klass.superclass && klass.superclass.prototype;
+// for－in循环遍历属性对象
 for (var k in properties) {
-        
+    // 取出每个属性    
     var value = properties[k];
-
+	// 如果父类实例与对象中的属性为fn
     if (ancestor && typeof value == 'function') {
+    	// 强大又很复杂的正则 匹配函数中所有参数名
         var argslist = /^\s*function\s*\(([^\(\)]*?)\)\s*?\{/i.exec(value.toString())[1].replace(/\s/i, '').split(',');
         if (argslist[0] === '$super' && ancestor[k]) {
         	value = (function (methodName, fn) {
@@ -173,11 +176,12 @@ for (var k in properties) {
             })(k, value);
         }
     }
+    // 属性赋值给虚拟klass
     klass.prototype[k] = value;
 }
 ```
 最好玩的部分来了，ancestor这个单词的含义是祖宗抑或原型，而实际上装载的也就是想当实例它祖宗的原型。
-当待扩展属性对象properties包含一个function ($super, options) {}的函数时，只要匹配到了$super，便重置子类参数数组并合并，可以交又父类来调用。
+当待扩展属性对象properties包含一个function ($super, options) {}的函数时，只要匹配到了$super，便重置子类参数数组并合并，可以交由父类来调用。
 最后把每个属性都扩展到父类的原型对象上。
 
 4.［扩展与兼容］
@@ -193,8 +197,8 @@ klass.prototype.__propertys__ = function () {
 };
 
 for (key in parent) {
-	if (parent.hasOwnProperty(key) && key !== 'prototype' && key !== 'superclass')
-	klass[key] = parent[key];
+    if (parent.hasOwnProperty(key) && key !== 'prototype' && key !== 'superclass')
+    klass[key] = parent[key];
 }
 
 klass.prototype.constructor = klass;
@@ -206,4 +210,5 @@ __propertys__函数的设定是作为属性扩展函数使用的，其中可封�
 在parent父类实例中，是自己独立属性的情况下（非原型也非superclass）也会兼容扩展给虚拟构造函数klass。
 
 好了，大致逻辑分析到一段落，下面看几个小demo。
+![](/img/normal/prototype.jpg)
 （未完待续）
