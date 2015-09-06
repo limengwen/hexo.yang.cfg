@@ -1,10 +1,10 @@
-title: 《Lizard源码分析》之抽象类Class［一］
+title: 《Lizard源码分析》之Common组件Core模块［一］
 date: 2015-08-29 15:51:39
 categories: [御剑江湖, Javascript]
 tags: [Javascript, Lizard]
 ---
 ![](/img/normal/prototype.jpg)
-在职业生涯中长久保持对技术的热忱是非常重要的事，在使用业务**API**的时候往往忽略了它的核心思想。今天便好好探索下**Lizard**框架对抽象类的实现。
+在职业生涯中长久保持对技术的热忱是非常重要的事，在使用业务**API**的时候往往忽略了它的核心思想。今天便好好探索下**Lizard**框架中核心模块**Core**对抽象类的实现。
 
 抽象类的作用就是为了创建实例和继承用的，谈及继承，大家都知道**Javascript**初级版本对继承的支持主要是依赖于**prototype**原型链实现的，而**ES6**已经把**Class**与**entends**的概念真正的实现到了服务端语言的层次，不得不令人感慨，真此一时彼一时也。
 
@@ -204,7 +204,7 @@ for (key in parent) {
 }
 
 klass.prototype.constructor = klass;
-
+// 返回klass虚拟构造函数
 return klass;
 ```
 `initialize`函数的设定是作为实例的构造函数重写存在的，而默认都会给一个无参的函数以供调用。
