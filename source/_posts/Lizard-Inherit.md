@@ -3,6 +3,7 @@ date: 2015-08-29 15:51:39
 categories: [御剑江湖, Javascript]
 tags: [Javascript, Lizard]
 ---
+![](/img/normal/prototype.jpg)
 在职业生涯中长久保持对技术的热忱是非常重要的事，在使用业务API的时候往往忽略了它的核心思想。今天便好好探索下Lizard框架对抽象类的实现。
 
 抽象类的作用就是为了创建实例和继承用的，谈及继承，大家都知道Javascript初级版本对继承的支持主要是依赖于prototype原型链实现的，而ES6已经把Class与entends的概念真正的实现到了服务端语言的层次，不得不令人感慨，真此一时彼一时也。
@@ -210,5 +211,5 @@ __propertys__函数的设定是作为属性扩展函数使用的，其中可封�
 在parent父类实例中，是自己独立属性的情况下（非原型也非superclass）也会兼容扩展给虚拟构造函数klass。
 
 好了，大致逻辑分析到一段落，下面看几个小demo。
-![](/img/normal/prototype.jpg)
+
 （未完待续）
