@@ -97,9 +97,9 @@ Core.Class = function () {
 };
 
 ```
-整个Class函数体可分为四个段落：
+##整个Class函数体可分为四个段落：
 
-1.［变量初始化］
+###1.［变量初始化］
 ```
 // 限制参数 只能有1或2个
 if (arguments.length == 0 || arguments.length > 2) throw '参数错误';
@@ -164,6 +164,7 @@ for (var k in properties) {
 	// 如果父类实例与对象中的属性为fn
     if (ancestor && typeof value == 'function') {
     	// 强大又很复杂的正则 匹配函数中所有参数名
+        // 此处也一定是class函数的精华部分
         var argslist = /^\s*function\s*\(([^\(\)]*?)\)\s*?\{/i.exec(value.toString())[1].replace(/\s/i, '').split(',');
         if (argslist[0] === '$super' && ancestor[k]) {
         	value = (function (methodName, fn) {
@@ -207,9 +208,57 @@ klass.prototype.constructor = klass;
 return klass;
 ```
 initialize函数的设定是作为实例的构造函数重写存在的，而默认都会给一个无参的函数以供调用。
-__propertys__函数的设定是作为属性扩展函数使用的，其中可封装一定的业务逻辑。
+【__propertys__】函数的设定是作为属性扩展函数使用的，其中可封装一定的业务逻辑。
 在parent父类实例中，是自己独立属性的情况下（非原型也非superclass）也会兼容扩展给虚拟构造函数klass。
 
-好了，大致逻辑分析到一段落，下面看几个小demo。
+好了，大致逻辑分析到一段落，下面看个小demo：
 
-（未完待续）
+```
+var Animal = Core.Class({
+    __propertys__:function () {
+        this.move = function () {
+            console.log('The Animal is moving.');
+        }
+    },
+    // 自定义构造函数 options
+    initialize: function (type, age) {
+        this.type = type;
+        this.age = age;
+    },
+    eat: function (food) {
+        food = food || '肉';
+        console.log('我要吃' + food + '~~~~');
+    },
+    showSelf: function () {
+        console.log('Type: ' + this.type + '; Age: ' + this.age + '; ');
+    }
+});
+
+var Cat = Core.Class(Animal, {
+    __propertys__:function () {
+        this.name = 'Mimi';
+    },
+    initialize: function ($super, type, age) {
+        // 运行时使用实际传递参数，与父类中参数保持一致
+        // 这点很重要 当参数中包含$super要避免漏参
+        $super(type, age);
+    },
+    showSelf: function () {
+        console.log('Name: ' + this.name + '; Type: ' + this.type + '; Age: ' + this.age + '; ');
+    }
+});
+
+var animal = new Animal('Cat', '2');
+animal.showSelf(); // 输出：Type: Cat; Age: 2;
+
+var cat = new Cat('Cat', '3');
+cat.eat('金坷垃'); // 调用父类方法 输出：我要吃金坷垃~~~~
+cat.showSelf(); // 输出：Name: Mimi; Type: Cat; Age: 3; 
+```
+前面源码中会对$super参数做处理，若子类含有$super参数，那么如果父类含有同名方法，则可调用父类方法，可控制权在子类手里，这里唯一要注意的就是参数传递，如demo中注释一定要一一对应。
+
+整个Core.Class函数分析到此结束，给自己也重新温习了下基础知识，也希望后面自己能封装出更具扩展性的Class！
+
+@^_^@
+
+
