@@ -1,6 +1,6 @@
 title: 《Lizard源码分析》之Common组件Core模块［一］
 date: 2015-08-29 15:51:39
-categories: [御剑江湖, Javacript]
+categories: [御剑江湖, JavaScript]
 tags: [JavaScript, Lizard]
 ---
 ![](/img/normal/prototype.jpg)
