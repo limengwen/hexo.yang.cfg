@@ -1,7 +1,7 @@
 title: 《Lizard源码分析》之Common组件Core模块［一］
 date: 2015-08-29 15:51:39
-categories: [御剑江湖, Javascript]
-tags: [Javascript, Lizard]
+categories: [御剑江湖, Javacript]
+tags: [JavaScript, Lizard]
 ---
 ![](/img/normal/prototype.jpg)
 在职业生涯中长久保持对技术的热忱是非常重要的事，在使用业务**API**的时候往往忽略了它的核心思想。今天便好好探索下**Lizard**框架中核心模块**Core**对抽象类的实现。
@@ -257,7 +257,7 @@ cat.showSelf(); // 输出：Name: Mimi; Type: Cat; Age: 3;
 ```
 前面源码中会对`$super`参数做处理，若子类含有`$super`参数，那么如果父类含有同名方法，则可调用父类方法，可控制权在子类手里，这里唯一要注意的就是参数传递，如demo中注释一定要一一对应。
 
-整个Core.Class函数分析到此结束，给自己也重新温习了下基础知识，后面封装代码尽量使扩展性更佳更友好！
+整个Core.Class函数分析到此结束，给自己也重新温习了下基础知识，后面封装代码尽量使扩展性变的更佳更友好！
 
 @^_^@
 
