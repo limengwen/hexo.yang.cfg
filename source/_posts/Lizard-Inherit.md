@@ -261,4 +261,5 @@ cat.showSelf(); // 输出：Name: Mimi; Type: Cat; Age: 3;
 
 @^_^@
 
+![](/img/comic/longmao.jpg)
 
