@@ -72,11 +72,93 @@ fixed.newProp = "ohai"; // 抛出TypeError错误
 3、不可删除原生对象或其属性
 ```
 "use strict";
-delete Object.prototype;
+delete Object.prototype; // 抛出TypeError错误
 ```
 
+4、属性名必须唯一
+```
+"use strict";
+var o = { p: 1, p: 2 }; // !!! 语法错误
+```
+ECMAScript6修复了此问题。
 
-想想当初Java搞了一年多，现在也应该重新拣起来才对，蓦然回首，还是初来魔都时更加勤奋，连上下班的地铁时间也不敢浪费。如今，一样要好好继续给自己加油。
+5、参数名必须唯一
+```
+function sum(a, a, c){ // !!! 语法错误
+  "use strict";
+  return a + b + c; // 代码运行到这里会出错
+}
+```
+
+###三、简化变量
+1、禁用`with`
+2、禁止删除声明变量
+3、禁止随意控制eval和arguments,不允许为其二者赋值。
+```
+"use strict";
+// 以下均会报错
+eval = 17;
+arguments++;
+++eval;
+var obj = { set p(arguments) { } };
+var eval;
+try { } catch (arguments) { }
+function x(eval) { }
+function arguments() { }
+var y = function eval() { };
+var f = new Function("arguments", "'use strict'; return 17;");
+```
+4、为arguments解锁
+```
+function f(a)
+{
+  "use strict";
+  a = 42;
+  return [a, arguments[0]];
+}
+var pair = f(17);
+console.assert(pair[0] === 42); // Success
+console.assert(pair[1] === 17); // Success
+```
+改变传递参数并赋值并不会与arguments产生关联关系，而正常模式下会。平时编码中我们很可能会不小心踩此坑。
+
+5、不再支持 arguments.callee
+
+###四、消除安全隐患
+1、this的权限
+```
+"use strict";
+function fun() { return this; }
+assert(fun() === undefined);
+assert(fun.call(2) === 2);
+assert(fun.apply(null) === null);
+assert(fun.call(undefined) === undefined);
+assert(fun.bind(true)() === true);
+```
+`this`终于可以被释放，不再总是指向一个对象，默认总是指向当前对象，如果都是指向window对象肯定会不小心就埋了深坑。
+
+2、关键字的取缔
+```
+function package(protected) // !!!
+{
+  "use strict";
+  var implements; // !!!
+
+  interface: // !!!
+  while (true)
+  {
+    break interface; // !!!
+  }
+
+  function private() { } // !!!
+}
+function fun(static) { 'use strict'; } // !!!
+```
+这里收归国有也是为了将来代码可以更好的支持ECMAScript6。
+
+`strict mode`先把常用要注意的总结到这里，mark了不少Mozilla的内容。可能相信在这些约束下，Js可以变的越来越规范，很多同行可能会觉得如果去掉了这些“灵活”的内容，Js就不好玩了，我个人觉得恰恰相反，因为Js开发成本低但它的排障成本比其他任何语言都高很多，所以我们的代码需要去走“严格模式”。
+
+想想当初Java搞了一年多，现在也应该重新拣起来才对，蓦然回首，还是初来魔都时更加勤奋，连上下班的地铁时间也不敢浪费，要好好继续给自己加油！
 
 （PS.放些《使命召唤》的图片似乎更能表现“严格”的重要性。）
 
