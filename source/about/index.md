@@ -1,6 +1,7 @@
 title: About Me
 date: 2015-06-30 15:15:15
 ---
+![](/img/me/me_99.jpg)
 
 ``` bash
 var Knight = {

@@ -1,4 +1,4 @@
-title: 《Lizard源码分析》之Common组件Core模块［一］
+title: 《Lizard源码分析》之Common组件Core模块
 date: 2015-08-29 15:51:39
 categories: [御剑江湖, JavaScript]
 tags: [JavaScript, Lizard]
@@ -16,30 +16,30 @@ var Core = function () {
 
 };
 ```
-之前一直没有过直接给函数添加属性或方法的习惯，但事实上**function**本身也是**object**类型，可以任意扩展。在构造函数场景中，附加的属性和方法代表实例拥有的特性与行为，而**jQuery**特有**$**函数上扩展的各个方法追加进了各个通过**selector**返回的**jQuery**类型**dom**对象之中，并实现了链式调用。
+之前一直没有过直接给函数添加属性或方法的习惯，但事实上function本身也是_object_类型，可以任意扩展。在构造函数场景中，附加的属性和方法代表实例拥有的特性与行为，而jQuery特有的$函数上扩展的各个方法追加进了各个通过selector返回的jQuery类型dom对象之中，并实现了链式调用。
 
-**Core**的核心方法`Class`，我们先看它的完整代码：
+####Core的核心方法`Class`，我们先看它的完整代码：
 ```
 Core.Class = function () {
 
     if (arguments.length == 0 || arguments.length > 2) throw '参数错误';
-    
-    var parent = null; 
+
+    var parent = null;
     var properties = slice.call(arguments);
 
     if (typeof properties[0] === 'function') {
-        parent = properties.shift(); 
+        parent = properties.shift();
     }
-    properties = properties[0]; 
+    properties = properties[0];
 
 
     function klass() {
         this.__propertys__();
-        this.initialize.apply(this, arguments); 
+        this.initialize.apply(this, arguments);
     }
 
-    klass.superclass = parent; 
-    klass.subclasses = []; 
+    klass.superclass = parent;
+    klass.subclasses = [];
 
     var sup__propertys__ = function () {};
     var sub__propertys__ = properties.__propertys__ || function () {};
@@ -51,15 +51,15 @@ Core.Class = function () {
         }
         var subclass = function () {};
         subclass.prototype = parent.prototype; console.log(parent.prototype);
-        klass.prototype = new subclass; 
+        klass.prototype = new subclass;
 
         parent.subclasses.push(klass);
     }
-	
+
     var ancestor = klass.superclass && klass.superclass.prototype;
 
     for (var k in properties) {
-        
+
         var value = properties[k];
 
         if (ancestor && typeof value == 'function') {
@@ -80,7 +80,7 @@ Core.Class = function () {
     }
 
     if (!klass.prototype.initialize) klass.prototype.initialize = function () {};
-		
+
     klass.prototype.__propertys__ = function () {
         sup__propertys__.call(this);
         sub__propertys__.call(this);
@@ -110,7 +110,7 @@ var properties = slice.call(arguments);// 将参数转换为数组 并赋值到�
 // 如果第一个参数为类（构造函数），那么就将之取出
 if (typeof properties[0] === 'function') {
     // 删除父类构造函数并丢给父类变量
-    parent = properties.shift(); 
+    parent = properties.shift();
 }
 
 // properties只能是待扩展的自面量对象
@@ -129,9 +129,9 @@ function klass() {
     this.initialize.apply(this, arguments);// 执行自定义构造函数
 }
 // 虚拟构造函数superclass属性保存父类实例 运行时为构造函数或为空
-klass.superclass = parent; 
+klass.superclass = parent;
 // 虚拟构造函数subclasses属性保存子类变量 创建空数组 装载多个子类来一一继承父类
-klass.subclasses = []; 
+klass.subclasses = [];
 
 var sup__propertys__ = function () {};
 var sub__propertys__ = properties.__propertys__ || function () {};
@@ -143,8 +143,8 @@ if (parent) {
     	sup__propertys__ = parent.prototype.__propertys__;
     }
     var subclass = function () {};
-    subclass.prototype = parent.prototype; 
-    klass.prototype = new subclass; 
+    subclass.prototype = parent.prototype;
+    klass.prototype = new subclass;
 
     parent.subclasses.push(klass);// ?? parent.subclasses.push(subclass);
 }
@@ -182,7 +182,7 @@ for (var k in properties) {
     klass.prototype[k] = value;
 }
 ```
-最好玩的部分来了，**"ancestor"**这个单词的含义是祖宗抑或原型，而实际上装载的也就是想当实例它祖宗的原型。
+最好玩的部分来了，"ancestor"这个单词的含义是祖宗抑或原型，而实际上装载的也就是想当实例它祖宗的原型。
 当待扩展属性对象`properties`包含一个`function ($super, options) {}`的函数时，只要匹配到了`$super`，便重置子类参数数组并合并，可以交由父类来调用。
 最后把每个属性都扩展到父类的原型对象上。
 
@@ -253,7 +253,7 @@ animal.showSelf(); // 输出：Type: Cat; Age: 2;
 
 var cat = new Cat('Cat', '3');
 cat.eat('金坷垃'); // 调用父类方法 输出：我要吃金坷垃~~~~
-cat.showSelf(); // 输出：Name: Mimi; Type: Cat; Age: 3; 
+cat.showSelf(); // 输出：Name: Mimi; Type: Cat; Age: 3;
 ```
 前面源码中会对`$super`参数做处理，若子类含有`$super`参数，那么如果父类含有同名方法，则可调用父类方法，可控制权在子类手里，这里唯一要注意的就是参数传递，如demo中注释一定要一一对应。
 
@@ -262,4 +262,3 @@ cat.showSelf(); // 输出：Name: Mimi; Type: Cat; Age: 3;
 @^_^@
 
 ![](/img/comic/longmao.jpg)
-
