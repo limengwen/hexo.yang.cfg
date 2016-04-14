@@ -1,6 +1,6 @@
 title: Vue.js入门教程（一）
 date: 2016-04-13 22:49:10
-categories: [御剑江湖, Web]
+categories: [御剑江湖, JavaScript]
 tags: [JavaScript]
 ---
 ![](/img/vue/icon.jpg)
