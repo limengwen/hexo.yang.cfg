@@ -8,16 +8,27 @@ tags: [漫画]
 
 ![秋月风夏，请多关照~](/img/comic/fallenmoon/01_0.jpg)
 
-主题也还是讲述少年们追逐音乐梦想的故事，画风很赞，尽管剧情比较狗血。女主秋月风夏刚跟男主成为恋人就被作者给画没了……
+主题是讲述少年们追逐音乐梦想的故事，画风很赞，免不了剧情略微狗血……女主秋月风夏刚跟男主成为恋人就被作者给画没了……
 
 ![没事不要帮倒忙……](/img/comic/fallenmoon/01_2.jpg)
 
 ![Happy](/img/comic/fallenmoon/35_0.jpg)
 ![Happy](/img/comic/fallenmoon/35_1.jpg)
 
-最后秋月风夏的终于停留在了大家的回忆里，男主小优也终于接纳了新的女主兼乐队主唱——碧井风夏。
+然后秋月意外的离开，碧井接着意外的出现。
 
 ![碧井风夏，请多关照~](/img/comic/fallenmoon/48.jpg)
+
+最后秋月风夏的终于停留在了大家的回忆里，男主小优也终于接纳了新的女主兼主唱——碧井风夏。
+
+![终于合体了~](/img/comic/fallenmoon/99_0.jpg)
+![一起推向高潮~](/img/comic/fallenmoon/99_1.jpg)
+![爆棚的演唱~](/img/comic/fallenmoon/99_2.jpg)
+![没有人想到合体后会是这种景象~](/img/comic/fallenmoon/99_3.jpg)
+![亢奋的观众们~](/img/comic/fallenmoon/99_4.jpg)
+![前辈们的寄托已传递出去了](/img/comic/fallenmoon/99_5.jpg)
+
+
 
 但是这104话，究竟是怎么回事呢……
 
