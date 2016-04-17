@@ -8,7 +8,7 @@ tags: [漫画]
 
 主题是讲述少年们追逐音乐梦想的故事，画风很赞，免不了剧情略微狗血……女主秋月风夏刚跟男主成为恋人就被作者给画没了……
 
-![秋月风夏，请多关照~](/img/comic/fallenmoon/01.jpg)
+![秋月风夏，请多关照~](/img/comic/fallenmoon/01_0.jpg)
 ![没事不要帮倒忙……](/img/comic/fallenmoon/01_2.jpg)
 ![Happy](/img/comic/fallenmoon/35_0.jpg)
 ![Happy](/img/comic/fallenmoon/35_1.jpg)
