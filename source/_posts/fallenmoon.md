@@ -3,15 +3,13 @@ date: 2016-04-16 22:17:43
 categories: [凤鸣榣山, 漫画]
 tags: [漫画]
 ---
-![秋月风夏，请多关照~](/img/comic/fallenmoon/01.jpg)
+![秋月风夏](/img/comic/fallenmoon/moon.jpg)
 除了《OnePiece》外，也没怎么追过漫画了，这回又来到武汉考试，不小心就追完了《风夏》的最新一话。
-
-![秋月风夏，请多关照~](/img/comic/fallenmoon/01_0.jpg)
 
 主题是讲述少年们追逐音乐梦想的故事，画风很赞，免不了剧情略微狗血……女主秋月风夏刚跟男主成为恋人就被作者给画没了……
 
+![秋月风夏，请多关照~](/img/comic/fallenmoon/01.jpg)
 ![没事不要帮倒忙……](/img/comic/fallenmoon/01_2.jpg)
-
 ![Happy](/img/comic/fallenmoon/35_0.jpg)
 ![Happy](/img/comic/fallenmoon/35_1.jpg)
 
@@ -37,3 +35,5 @@ tags: [漫画]
 ![碧井觉得自己是替代品？想多了……](/img/comic/fallenmoon/104_2.jpg)
 
 剧情越来越有趣了，非常希望两人能有个happy ending~
+
+![Q秋月风夏Q](/img/comic/fallenmoon/moon_2.jpg)
