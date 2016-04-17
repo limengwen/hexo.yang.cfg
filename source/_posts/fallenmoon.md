@@ -3,7 +3,7 @@ date: 2016-04-16 22:17:43
 categories: [凤鸣榣山, 漫画]
 tags: [漫画]
 ---
-
+![秋月风夏，请多关照~](/img/comic/fallenmoon/01.jpg)
 除了《OnePiece》外，也没怎么追过漫画了，这回又来到武汉考试，不小心就追完了《风夏》的最新一话。
 
 ![秋月风夏，请多关照~](/img/comic/fallenmoon/01_0.jpg)
