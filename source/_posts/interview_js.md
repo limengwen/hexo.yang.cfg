@@ -66,4 +66,5 @@ Object.prototype.a = function(){};
 Function.prototype.b = function(){};
 var f = new F();
 ```
+`上述代码中，f为构造函数所实例化出来的对象，而非普通函数，且f继承自Object，所以很遗憾的是，f只能调用到`
 ![](/img/comic/longmao.jpg)
